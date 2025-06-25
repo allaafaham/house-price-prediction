@@ -24,6 +24,8 @@ wheels/
 venv/
 ENV/
 env/
+house-prices-env/
+house-prices-env-py311/
 .env
 
 # IDE
