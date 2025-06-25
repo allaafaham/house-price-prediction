@@ -6,7 +6,7 @@
 
 Lydia Doe, a fictional individual from Belgium, has recently inherited four houses in Ames, Iowa, USA, from her deceased great-grandfather. While Lydia is well-versed in property valuation in her home country, she is acutely aware that the factors influencing house desirability and value in Belgium may not translate directly to the Iowan real estate market. She recognizes that relying solely on her European experience could lead to inaccurate appraisals and potentially significant financial loss or missed opportunity when selling the inherited properties.
 
-**👉 [Click here to try the live House Price Prediction Dashboard!](https://house-price-prediction-allaa-22f158218629.herokuapp.com/)**
+<p><strong><a href="https://house-price-prediction-allaa-22f158218629.herokuapp.com/" target="_blank" rel="noopener noreferrer">The live House Price Prediction Dashboard!</a></strong></p>
 
 Faced with this challenge, Lydia seeks the expertise of a Data Practitioner. Her primary motivations are:
 - She does not know the true worth of the four inherited properties and wants to avoid the risk of inaccurate pricing, given the substantial sums at stake.
