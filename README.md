@@ -101,17 +101,40 @@ Build a regression model to predict house sale prices in Ames, Iowa, with high a
 
 ## Hypotheses
 
-1. **OverallQual is the most influential variable for SalePrice.**
-   - *Validation:* Highest Pearson correlation (ρ ≈ 0.79), top model-based importance (gain = 0.676), and clear monotonic trend in visualizations.
-   - *Result:* Strongly supported by all analyses.
+## Project Hypotheses and Validation
 
-2. **A tuned XGBRegressor outperforms linear and bagged tree models, achieving R² > 0.85 and RMSE < $30,000.**
-   - *Validation:* Cross-validation and test set results confirm XGBRegressor as best performer (R² = 0.8966, RMSE = $26,725).
-   - *Result:* Confirmed.
+This section summarizes the key hypotheses formulated during the project and the evidence used to validate or refute them.
 
-3. **The four inherited houses are mid-priced within the Ames distribution.**
-   - *Validation:* Predicted prices cluster around the sample mean ($163,904 vs. dataset mean ≈ $175,000).
-   - *Result:* Confirmed; all four are within one interquartile range of the median.
+---
+
+### Hypothesis 1
+
+**Statement:**  
+*OverallQual (the general material and finish quality of the house) is the single most influential individual variable for explaining variation in SalePrice in the Ames, IA data.*
+
+**Validation:**
+- **Correlation analysis:** Pearson correlation between OverallQual and SalePrice is approximately 0.79, the largest among all numeric features.
+- **Model-based importance:** In the tuned XGBRegressor, gain-based feature importance for OverallQual is 0.676 (67.6%), far exceeding the second-ranked feature GrLivArea at 0.070.
+- **Visual confirmation:** Scatter/box plots show a clear monotonic increase in median and upper-quartile prices with each step up the quality scale.
+
+> **Conclusion:**  
+> All three validation routes converge, supporting the hypothesis that OverallQual dominates the price signal in this market.
+
+---
+
+### Hypothesis 2
+
+**Statement:**  
+*Houses with more above-ground living area (GrLivArea) tend to sell for higher prices.*
+
+**Validation:**
+- **Pearson Correlation with SalePrice:** ≈ 0.71
+- **Spearman Correlation:** Also indicates a strong positive monotonic relationship.
+- **Scatter plot:** Shows a clear upward trend between GrLivArea and SalePrice.
+- **Model importance:** GrLivArea is one of the top predictors in the XGBoost model used in this project.
+
+> **Conclusion:**  
+> The hypothesis is confirmed: more above-ground living area is strongly associated with higher sale prices in Ames, Iowa. GrLivArea is an important feature for both analysis and prediction.
 
 ---
 
@@ -149,14 +172,56 @@ Build a regression model to predict house sale prices in Ames, Iowa, with high a
 
 ## Deployment
 
-- **Local Deployment:**  
-  1. Clone the repository.
-  2. Create and activate a Python 3.11+ virtual environment.
-  3. Install dependencies:
-     ```
-     pip install -r requirements.txt
-     ```
-  4. Run the dashboard:
-     ```
-     streamlit run app_pages/multipage.py
-     ```
+
+## Deployment on Heroku
+
+You can deploy this Streamlit dashboard to Heroku by following these steps:
+
+### 1. Prerequisites
+
+- [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed
+- A free [Heroku account](https://signup.heroku.com/)
+- Your project files in a Git repository (including `requirements.txt` and a `Procfile`)
+
+### 2. Add a `Procfile`
+
+Create a file named `Procfile` in your project root with the following content:
+web: streamlit run app_pages/multipage.py --server.port=$PORT
+
+### 3. Commit your changes
+
+```bash
+git add Procfile
+git commit -m "Add Procfile for Heroku deployment"
+```
+
+### 4. Create a Heroku app
+
+```bash
+heroku create your-app-name
+```
+
+### 5. Push your code to Heroku
+
+```bash
+git push heroku main
+```
+*(If your default branch is `master`, use `git push heroku master` instead.)*
+
+### 6. Scale the web process
+
+```bash
+heroku ps:scale web=1
+```
+
+### 7. Open your deployed app
+
+```bash
+heroku open
+```
+
+---
+
+**Note:**  
+- Make sure your `requirements.txt` includes all necessary dependencies.
+- If you use files or folders for data, ensure they are included in your repository or handled via environment variables/cloud storage.
