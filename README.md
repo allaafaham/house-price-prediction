@@ -154,19 +154,72 @@ This section summarizes the key hypotheses formulated during the project and the
 ## Dashboard and Its Design
 
 - **Framework:** Streamlit
-- **Pages:**
-  1. Quick Project Summary
-  2. House Price Study (EDA)
-  3. Project Hypothesis and Validation
-  4. Predicted Prices for 4 Inherited Houses
-  5. Predict Any House Price
-  6. ML Model Technical Details
+
+The dashboard is organized into the following pages, each designed to address a specific business or user need:
+
+### 1. Quick Project Summary
+**Purpose:**  
+Provides a concise overview of the project, including the business problem, objectives, and key results.  
+**Contents:**  
+- Project background and Lydia's story  
+- Business requirements and goals  
+- High-level summary of the solution and its value
+
+### 2. House Price Study (EDA)
+**Purpose:**  
+Enables users to explore the Ames housing dataset and understand how different features relate to sale price.  
+**Contents:**  
+- Interactive correlation heatmap of numerical features  
+- Scatter plots of top correlated features vs. sale price  
+- Box plots for categorical features  
+- Distribution plots (histograms) for sale price  
+- Feature selection tools for custom visualizations
+
+### 3. Project Hypothesis and Validation
+**Purpose:**  
+Presents the main hypotheses about the Ames housing market and the evidence used to validate or refute them.  
+**Contents:**  
+- List of key hypotheses  
+- Statistical, model-based, and visual validation for each  
+- Clear conclusions for each hypothesis
+
+### 4. Predicted Prices for 4 Inherited Houses
+**Purpose:**  
+Shows Lydia the predicted sale prices for her four inherited properties using the trained ML model.  
+**Contents:**  
+- Table of the four houses with their features  
+- Predicted sale prices and confidence intervals  
+- Comparison to Ames market statistics  
+- Visualizations of where these houses fall within the market
+
+### 5. Predict Any House Price
+**Purpose:**  
+Allows any user to input features for a house in Ames and receive a predicted sale price.  
+**Contents:**  
+- User-friendly input form for key features  
+- Instant price prediction with confidence interval  
+- Feature importance and model explanation for the prediction  
+- Option to download the prediction result
+
+### 6. ML Model Technical Details
+**Purpose:**  
+Provides transparency and technical insight into the machine learning models used.  
+**Contents:**  
+- Description of the modeling approach and feature engineering  
+- Model performance metrics (R², RMSE, MAE)  
+- Cross-validation and error analysis visualizations  
+- Feature importance plots  
+- Model comparison tables  
+- Documentation and FAQ
+
+---
 
 **Design Principles:**
-- Clean, intuitive sidebar navigation.
-- Each page addresses a specific business/user need.
-- EDA plots and model explanations are interactive and concise.
-- Prediction forms require only the most important features for ease of use.
+- Clean, intuitive sidebar navigation
+- Each page addresses a specific business/user need
+- EDA plots and model explanations are interactive and concise
+- Prediction forms require only the most important features for ease of use
+- Responsive design for different devices
 
 ---
 
