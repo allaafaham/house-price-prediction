@@ -42,13 +42,14 @@ def main():
 
     with st.form("predict_form"):
         st.write("### Enter House Features:")
+        st.caption("Please enter realistic values. Typical ranges: GarageArea (0-1500), BsmtFinSF1 (0-3000), GrLivArea (300-4500), TotalBsmtSF (0-3000). Values outside these ranges may not yield reliable predictions.")
         user_input = {}
-        user_input['GarageArea'] = st.number_input('GarageArea', min_value=0.0, value=float(defaults['GarageArea']))
-        user_input['BsmtFinSF1'] = st.number_input('BsmtFinSF1', min_value=0.0, value=float(defaults['BsmtFinSF1']))
-        user_input['GrLivArea'] = st.number_input('GrLivArea', min_value=0.0, value=float(defaults['GrLivArea']))
+        user_input['GarageArea'] = st.number_input('GarageArea', min_value=0.0, max_value=1500.0, value=float(defaults['GarageArea']))
+        user_input['BsmtFinSF1'] = st.number_input('BsmtFinSF1', min_value=0.0, max_value=3000.0, value=float(defaults['BsmtFinSF1']))
+        user_input['GrLivArea'] = st.number_input('GrLivArea', min_value=300.0, max_value=4500.0, value=float(defaults['GrLivArea']))
         user_input['KitchenQual'] = st.selectbox('KitchenQual', ['Po', 'Fa', 'TA', 'Gd', 'Ex'], index=['Po', 'Fa', 'TA', 'Gd', 'Ex'].index(defaults['KitchenQual']) if defaults['KitchenQual'] in ['Po', 'Fa', 'TA', 'Gd', 'Ex'] else 2)
         user_input['OverallQual'] = st.selectbox('OverallQual', list(range(1, 11)), index=int(defaults['OverallQual'])-1 if 1 <= int(defaults['OverallQual']) <= 10 else 5)
-        user_input['TotalBsmtSF'] = st.number_input('TotalBsmtSF', min_value=0.0, value=float(defaults['TotalBsmtSF']))
+        user_input['TotalBsmtSF'] = st.number_input('TotalBsmtSF', min_value=0.0, max_value=3000.0, value=float(defaults['TotalBsmtSF']))
         submitted = st.form_submit_button("Predict Price")
 
     if submitted:

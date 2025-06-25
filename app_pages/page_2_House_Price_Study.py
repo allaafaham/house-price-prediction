@@ -45,6 +45,17 @@ def main():
             else:
                 st.warning(f"{caption} not found.")
 
+        st.markdown("""
+        **Feature Selection Based on Correlation and PPS Analysis**
+        
+        To identify the most important features for predicting sale price, we combined insights from three methods:
+        - **Spearman Correlation:** Selected features with strong monotonic relationships to SalePrice (e.g., GrLivArea, OverallQual, GarageArea, GarageYrBlt, YearBuilt).
+        - **Pearson Correlation:** Highlighted features with strong linear relationships (e.g., GrLivArea, OverallQual, 1stFlrSF, GarageArea, TotalBsmtSF).
+        - **PPS (Power Predictive Score):** Identified features with high predictive power, including non-linear and categorical effects (e.g., OverallQual, KitchenQual).
+        
+        The final set of important variables was created by combining the top features from all three methods and removing duplicates. This comprehensive approach ensures that both linear and non-linear, as well as categorical, predictors are considered for further analysis and modeling.
+        """)
+
     if show_varplots:
         st.subheader("Important Variable Plots")
         all_files = os.listdir(EDA_IMG_DIR) if os.path.exists(EDA_IMG_DIR) else []
@@ -56,4 +67,13 @@ def main():
             # Show explanation if available
             key = var_name.split('_')[0]  # Handles e.g. 'GrLivArea', 'GarageArea', etc.
             if key in var_explanations:
-                st.markdown(var_explanations[key]) 
+                st.markdown(var_explanations[key])
+
+    # Add summary section at the end
+    st.markdown("""
+    ## Summary
+
+    - Variables with the strongest association to `SalePrice` include `GrLivArea`, `OverallQual`, `KitchenQual`, and `YearBuilt`.
+    - Moderate predictors include `GarageArea`, `1stFlrSF`, and `TotalBsmtSF`.
+    - `GarageYrBlt` may contain data quality issues and requires preprocessing.
+    """) 
