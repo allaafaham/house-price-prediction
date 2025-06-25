@@ -1,0 +1,2 @@
+estimator,min_score,mean_score,max_score,std_score,model__learning_rate,model__max_depth,model__n_estimators,model__subsample
+XGBRegressor,0.7008240818977356,0.811199426651001,0.8788572549819946,0.06299139676273924,0.05,5,100,0.8

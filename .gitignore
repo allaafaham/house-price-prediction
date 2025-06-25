@@ -52,7 +52,6 @@ Thumbs.db
 
 # Project specific
 *.log
-*.csv
 *.dat
 *.out
 *.pid
