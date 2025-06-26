@@ -46,7 +46,7 @@ Accurately predicting house prices in Ames, Iowa, enables Lydia and other stakeh
 
 | ID       | User Story                                                                                                 | Tasks                                                                                                                                                 |
 |----------|------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **DV-1** | As a **user**, I want to understand which house features most influence the sale price, so that I can make informed decisions about my inherited properties. | • Create a correlation-matrix heatmap of all numerical features against `SalePrice`.<br>• Generate scatter plots of top-correlated features vs. `SalePrice`.<br>• Produce box plots for categorical features vs. `SalePrice`.<br>• Implement interactive feature selection for all visualizations.<br>• Add tooltips displaying exact values and summary statistics. |
+| **DV-1** | As a **user**, I want to understand which house features most influence the sale price, so that I can make informed decisions about my inherited properties. | • Create a correlation-matrix heatmap of all numerical features against `SalePrice`.<br>• Generate scatter plots of top-correlated features vs. `SalePrice`.<br>• Produce box plots for categorical features vs. `SalePrice`.
 | **DV-2** | As a **user**, I want to see the distribution of house prices in Ames, so that I can understand the market range. | • Create a histogram of `SalePrice` with adjustable bin width.                                                                                         |
 
 ### Machine Learning
@@ -68,47 +68,39 @@ Accurately predicting house prices in Ames, Iowa, enables Lydia and other stakeh
 |----------|--------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
 | **ME-1** | As a **user**, I want to understand how accurate the predictions are, so that I can trust the model’s outputs. | • Implement cross-validation for all candidate models.<br>• Visualize model performance metrics (`R²`, `RMSE`, `MAE`).<br>• Create model-comparison tables highlighting trade-offs and ranking. |
 
-### Documentation
-
-| ID        | User Story                                                                                                     | Tasks                                                                                                                                  |
-|-----------|----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
-| **DOC-1** | As a **user**, I want to understand how the model works and what factors it considers, so that I can trust its predictions. | • Write detailed model documentation (data-processing steps, algorithms, hyperparameters).<br>• Generate feature-importance documentation (global and local explanations).<br>• Provide clear usage instructions for the dashboard and codebase. |
-
 
 ---
-
 ## Dataset 
 
 - **Source:** [Kaggle - codeinstitute/housing-prices-data](https://www.kaggle.com/codeinstitute/housing-prices-data)
 
-| Feature         | Description                                                                                   | Imputation/Default |
-|-----------------|----------------------------------------------------------------------------------------------|--------------------|
-| 1stFlrSF        | First Floor Square Feet: The area (in square feet) of the first floor of the house.           |                    |
-| 2ndFlrSF        | Second Floor Square Feet: The area (in square feet) of the second floor (if any).             | 0                  |
-| BedroomAbvGr    | Bedrooms Above Grade: Number of bedrooms above ground level (not including basement rooms).   | median             |
-| BsmtExposure    | Basement Exposure: Walkout or garden level walls in basement (e.g., None, Mn, Av, Gd).        | None               |
-| BsmtFinSF1      | Basement Finished Area 1: Type 1 finished square feet in basement.                            |                    |
-| BsmtFinType1    | Basement Finish Type 1: Describes the quality of the finished area (e.g., GLQ, ALQ, Unf).     | None               |
-| BsmtUnfSF       | Unfinished Basement Square Feet: Unfinished square feet of basement area.                     |                    |
-| EnclosedPorch   | Enclosed Porch Square Feet: Area of enclosed porch.                                           | 0                  |
-| GarageArea      | Garage Area: Size of the garage in square feet.                                               |                    |
-| GarageFinish    | Garage Finish: Interior finish of the garage (e.g., Finished, Unfinished, RFn).               | None               |
-| GarageYrBlt     | Garage Year Built: Year the garage was built.                                                 | mean               |
-| GrLivArea       | Ground Living Area: Above ground living area in square feet (does not include basement).      |                    |
-| KitchenQual     | Kitchen Quality: Quality of the kitchen (e.g., Ex, Gd, TA, Fa).                              |                    |
-| LotArea         | Lot Area: Size of the lot in square feet.                                                     |                    |
-| LotFrontage     | Lot Frontage: Linear feet of street connected to property.                                    | median             |
-| MasVnrArea      | Masonry Veneer Area: Area of masonry veneer (brick, stone) in square feet.                    |                    |
-| OpenPorchSF     | Open Porch Square Feet: Area of open porch.                                                   |                    |
-| OverallCond     | Overall Condition: Rates the overall condition of the house (1=Very Poor, 10=Excellent).      |                    |
-| OverallQual     | Overall Quality: Rates the overall material and finish of the house (1=Very Poor, 10=Excellent).|                  |
-| TotalBsmtSF     | Total Basement Square Feet: Total area of the basement.                                       |                    |
-| WoodDeckSF      | Wood Deck Square Feet: Area of wood deck.                                                     | 0                  |
-| YearBuilt       | Year Built: Original construction year of the house.                                          |                    |
-| YearRemodAdd    | Year Remodeled: Year of last remodel (if any).                                                |                    |
-| SalePrice       | Sale Price: The property's sale price (this is your target variable for prediction).           |                    |
+| Feature         | Description                                                                                   |
+|----------------|-----------------------------------------------------------------------------------------------|
+| 1stFlrSF        | First Floor Square Feet: The area (in square feet) of the first floor of the house.           |
+| 2ndFlrSF        | Second Floor Square Feet: The area (in square feet) of the second floor (if any).             |
+| BedroomAbvGr    | Bedrooms Above Grade: Number of bedrooms above ground level (not including basement rooms).   |
+| BsmtExposure    | Basement Exposure: Walkout or garden level walls in basement (e.g., None, Mn, Av, Gd).        |
+| BsmtFinSF1      | Basement Finished Area 1: Type 1 finished square feet in basement.                            |
+| BsmtFinType1    | Basement Finish Type 1: Describes the quality of the finished area (e.g., GLQ, ALQ, Unf).     |
+| BsmtUnfSF       | Unfinished Basement Square Feet: Unfinished square feet of basement area.                     |
+| EnclosedPorch   | Enclosed Porch Square Feet: Area of enclosed porch.                                           |
+| GarageArea      | Garage Area: Size of the garage in square feet.                                               |
+| GarageFinish    | Garage Finish: Interior finish of the garage (e.g., Finished, Unfinished, RFn).               |
+| GarageYrBlt     | Garage Year Built: Year the garage was built.                                                 |
+| GrLivArea       | Ground Living Area: Above ground living area in square feet (does not include basement).      |
+| KitchenQual     | Kitchen Quality: Quality of the kitchen (e.g., Ex, Gd, TA, Fa).                               |
+| LotArea         | Lot Area: Size of the lot in square feet.                                                     |
+| LotFrontage     | Lot Frontage: Linear feet of street connected to property.                                    |
+| MasVnrArea      | Masonry Veneer Area: Area of masonry veneer (brick, stone) in square feet.                    |
+| OpenPorchSF     | Open Porch Square Feet: Area of open porch.                                                   |
+| OverallCond     | Overall Condition: Rates the overall condition of the house (1=Very Poor, 10=Excellent).      |
+| OverallQual     | Overall Quality: Rates the overall material and finish of the house (1=Very Poor, 10=Excellent). |
+| TotalBsmtSF     | Total Basement Square Feet: Total area of the basement.                                       |
+| WoodDeckSF      | Wood Deck Square Feet: Area of wood deck.                                                     |
+| YearBuilt       | Year Built: Original construction year of the house.                                          |
+| YearRemodAdd    | Year Remodeled: Year of last remodel (if any).                                                |
+| SalePrice       | Sale Price: The property's sale price (this is your target variable for prediction).          |
 
----
 
 ## Model Objective, Metrics & Evaluation Strategy
 
