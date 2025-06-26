@@ -6,18 +6,13 @@
 
 Lydia Doe, a fictional individual from Belgium, has recently inherited four houses in Ames, Iowa, USA, from her deceased great-grandfather. While Lydia is well-versed in property valuation in her home country, she is acutely aware that the factors influencing house desirability and value in Belgium may not translate directly to the Iowan real estate market. She recognizes that relying solely on her European experience could lead to inaccurate appraisals and potentially significant financial loss or missed opportunity when selling the inherited properties.
 
-<p><strong><a href="https://house-price-prediction-allaa-22f158218629.herokuapp.com/" target="_blank" rel="noopener noreferrer">The live House Price Prediction Dashboard!</a></strong></p>
+<p><strong><a href="https://house-price-prediction-allaa-22f158218629.herokuapp.com/" target="_blank" rel="noopener noreferrer">Price Prediction Dashboard!</a></strong></p>
 
 Faced with this challenge, Lydia seeks the expertise of a Data Practitioner. Her primary motivations are:
 - She does not know the true worth of the four inherited properties and wants to avoid the risk of inaccurate pricing, given the substantial sums at stake.
 - She is also interested in being able to predict the sale price of any house in Ames, Iowa, should she consider future property investments in the area.
 
 Through her research, Lydia discovers a public dataset containing detailed records of house prices and attributes for Ames, Iowa. She provides this dataset to the Data Practitioner and requests the development of a data-driven web application to assist with her goals.
-
-**Business Requirements:**
-- Lydia wants to understand how various house attributes (such as size, quality, and amenities) correlate with sale price in Ames. She expects clear, interactive data visualizations that reveal these relationships and help her build intuition about the local market.
-- She needs accurate predictions of the sale prices for her four inherited houses, based on their specific attributes.
-- She also wants the flexibility to predict the sale price of any other house in Ames, Iowa, by entering its key features into the app.
 
 This project delivers a comprehensive solution: a user-friendly web dashboard that combines exploratory data analysis, interactive visualizations, and robust machine learning models. The app empowers Lydia—and any user—to make informed, data-driven decisions about property valuation in Ames, Iowa, regardless of their prior experience with the local market.
 
@@ -149,7 +144,7 @@ This section summarizes the key hypotheses formulated during the project and the
 | **1-data-collection.ipynb** | Download and organize the Ames dataset from Kaggle. | Data successfully acquired and stored for analysis. |
 | **2-data-exploration.ipynb** | EDA: Correlation analysis, feature-target relationships, and visualization. | Identified key predictors; OverallQual, GrLivArea, and TotalBsmtSF are most important. |
 | **3-data-cleaning.ipynb** | Handle missing values, drop noisy features, and prepare clean datasets. | Cleaned train/test sets; missing data imputed or dropped as appropriate. |
-| **4-feature-engineering.ipynb** | Create new features, encode categoricals, and transform variables. | Engineered features improved model performance; categorical variables encoded. |
+| **4-feature-engineering.ipynb** | Encode categoricals, and transform numerical variables. | Chose tranformations for numerical bvariables and categorical variables were encoded. |
 | **5-modelling-and-evaluation.ipynb** | Build, tune, and evaluate ML models; select best pipeline. | XGBRegressor selected; full and reduced-feature models compared; metrics reported. |
 | **6-four-inherited-houses.ipynb** | Apply production pipeline to Lydia's inherited houses. | Predicted prices for all four houses; results confirm mid-market positioning. |
 
@@ -201,7 +196,7 @@ Shows Lydia the predicted sale prices for her four inherited properties using th
 Allows any user to input features for a house in Ames and receive a predicted sale price.  
 **Contents:**  
 - User-friendly input form for key features  
-- Instant price prediction with confidence interval  
+- Instant price prediction  
 - Feature importance and model explanation for the prediction  
 - Option to download the prediction result
 
@@ -211,10 +206,8 @@ Provides transparency and technical insight into the machine learning models use
 **Contents:**  
 - Description of the modeling approach and feature engineering  
 - Model performance metrics (R², RMSE, MAE)  
-- Cross-validation and error analysis visualizations  
 - Feature importance plots  
 - Model comparison tables  
-- Documentation and FAQ
 
 ---
 

@@ -75,5 +75,4 @@ def main():
 
     - Variables with the strongest association to `SalePrice` include `GrLivArea`, `OverallQual`, `KitchenQual`, and `YearBuilt`.
     - Moderate predictors include `GarageArea`, `1stFlrSF`, and `TotalBsmtSF`.
-    - `GarageYrBlt` may contain data quality issues and requires preprocessing.
     """) 
