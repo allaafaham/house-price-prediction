@@ -40,8 +40,6 @@ Accurately predicting house prices in Ames, Iowa, enables Lydia and other stakeh
 
 ## User Stories & Task Breakdown
 
-> All occurrences of “property owner” have been replaced with **user** for consistency.
-
 ### Data Visualization
 
 | ID       | User Story                                                                                                 | Tasks                                                                                                                                                 |
