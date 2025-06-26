@@ -38,6 +38,43 @@ Accurately predicting house prices in Ames, Iowa, enables Lydia and other stakeh
 | BR2 | Provide a general prediction tool for any house, requiring only the most important features. |
 | BR3 | Include model explainability, feature importance, and clear evaluation metrics in the dashboard. |
 
+## User Stories & Task Breakdown
+
+> All occurrences of “property owner” have been replaced with **user** for consistency.
+
+### Data Visualization
+
+| ID       | User Story                                                                                                 | Tasks                                                                                                                                                 |
+|----------|------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **DV-1** | As a **user**, I want to understand which house features most influence the sale price, so that I can make informed decisions about my inherited properties. | • Create a correlation-matrix heatmap of all numerical features against `SalePrice`.<br>• Generate scatter plots of top-correlated features vs. `SalePrice`.<br>• Produce box plots for categorical features vs. `SalePrice`.<br>• Implement interactive feature selection for all visualizations.<br>• Add tooltips displaying exact values and summary statistics. |
+| **DV-2** | As a **user**, I want to see the distribution of house prices in Ames, so that I can understand the market range. | • Create a histogram of `SalePrice` with adjustable bin width.                                                                                         |
+
+### Machine Learning
+
+| ID       | User Story                                                                                                   | Tasks                                                                                                                                                                     |
+|----------|--------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **ML-1** | As a **user**, I want accurate price predictions for my four inherited houses, so that I can set appropriate selling prices. | • Implement a data-preprocessing pipeline (missing-value imputation, encoding, scaling).<br>• Create feature-engineering steps for numerical and categorical variables.<br>• Build and train multiple regression models (Linear Regression, Random Forest, XGBoost).<br>• Evaluate models using cross-validation and hold-out metrics.<br>• Generate predictions for the four inherited houses. |
+| **ML-2** | As a **user**, I want to predict prices for any house in Ames, so that I can assess future investments.       | • Design an input form for new house features (dashboard).<br>• Implement an end-to-end prediction pipeline.<br>• Display feature-importance visualizations for each prediction. |
+
+### Dashboard
+
+| ID       | User Story                                                                                           | Tasks                                                                                                    |
+|----------|------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------|
+| **DB-1** | As a **user**, I want to interact with the data and predictions through a user-friendly interface, so that I can easily analyze and make decisions. | • Design and implement the dashboard layout in Streamlit.<br>• Build a clear sidebar navigation system with page routing. |
+
+### Model Evaluation
+
+| ID       | User Story                                                                                             | Tasks                                                                                                                  |
+|----------|--------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
+| **ME-1** | As a **user**, I want to understand how accurate the predictions are, so that I can trust the model’s outputs. | • Implement cross-validation for all candidate models.<br>• Visualize model performance metrics (`R²`, `RMSE`, `MAE`).<br>• Create model-comparison tables highlighting trade-offs and ranking. |
+
+### Documentation
+
+| ID        | User Story                                                                                                     | Tasks                                                                                                                                  |
+|-----------|----------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| **DOC-1** | As a **user**, I want to understand how the model works and what factors it considers, so that I can trust its predictions. | • Write detailed model documentation (data-processing steps, algorithms, hyperparameters).<br>• Generate feature-importance documentation (global and local explanations).<br>• Provide clear usage instructions for the dashboard and codebase. |
+
+
 ---
 
 ## Dataset 
@@ -150,7 +187,7 @@ This section summarizes the key hypotheses formulated during the project and the
 
 ---
 
-## Dashboard and Its Design
+## Dashboard Design
 
 - **Framework:** Streamlit
 
